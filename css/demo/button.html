@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="../typography.css">
+    <link rel="stylesheet" type="text/css" href="../buttons.css">
+    <style>
+        .container {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-evenly;
+            height: 50vw;
+        }
+
+        form {
+            width: 400px;
+            margin: 20px auto;
+            border-bottom: solid 1px #ccc;
+        }
+        body {
+            width: 60vw;
+            font-family: 'Outfit', sans-serif;
+            margin: 20px auto;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        button{
+            min-width: 150px;
+        }
+    </style>
+    <title>CSS DEMO - FORM BUTTON</title>
+</head>
+<body>
+<!-- Simple form -->
+<div class="container">
+
+    <div class="button-group">
+        <!-- Default button -->
+        <button class="button primary" type="button">
+            Primary Button
+        </button>
+        <button class="button dark" type="button">
+            Dark Button
+        </button>
+        <button class="button outline" type="button">
+            Outline Button
+        </button>
+
+        <hr>
+
+        <!-- Round buttons -->
+
+        <button class="button dark round" type="button">
+            Dark Round
+        </button>
+        <button class="button round outline" type="button">
+            Outline Round
+        </button>
+        <button class="button round" type="button">
+            Round Button
+        </button>
+
+        <!-- Selected button -->
+        <button class="button selected" type="button">
+            Selected Button
+        </button>
+    </div>
+    <div>
+
+        <!-- Danger button -->
+        <button class="button round error" type="button">
+            Error Round
+        </button>
+        <button class="button round alert" type="button">
+            Alert Round
+        </button>
+        <button class="button info" type="button">
+            Info Round
+        </button>
+        <button class="button success" type="button">
+            Success Round
+        </button>
+
+    </div>
+
+
+
+
+    <!-- Button sizes -->
+    <button class="button small" type="button">
+        Small Button
+    </button>
+
+    <button class="button" type="button">
+        Default Button
+    </button>
+
+    <button class="button large" type="button">
+        Large Button
+    </button>
+
+    <!-- Block button -->
+    <button class="button block" type="button">
+        Block Button
+    </button>
+
+    <!-- Hidden text button -->
+
+
+    <!-- Button groups -->
+    <div class="button-group">
+        <button class="button group-item" type="button">Group 1</button>
+        <button class="button group-item" type="button">Group 2</button>
+        <button class="button group-item" type="button">Group 3</button>
+    </div>
+
+    <div class="button-group quad">
+        <button class="button group-item quad" type="button">Group 1</button>
+        <button class="button group-item quad" type="button">Group 2</button>
+        <button class="button group-item quad" type="button">Group 3</button>
+    </div>
+</div>
+</body>
+</html>

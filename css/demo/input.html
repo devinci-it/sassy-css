@@ -1,0 +1,171 @@
+<!--"""-->
+<!--This HTML document demonstrates the styling of input forms using CSS. It includes a variety of input types and styles,-->
+<!--along with SVG icons for enhanced visual elements. The form showcases different states such as normal, disabled, and error.-->
+<!--CSS Styling:-->
+<!-- - External stylesheets for typography and form are linked.-->
+<!-- - Internal styling is used for setting the width, margin, and border of the form.-->
+<!--Form Elements:-->
+<!--1. Basic Input:-->
+<!-- - Simple text input.-->
+<!-- - Disabled input.-->
+<!-- - Input with an error state.-->
+<!-- - Disabled input with a predefined valid value.-->
+<!--2. SVG Input:-->
+<!-- - Text input with an associated SVG icon.-->
+<!-- - Three examples with different SVG icons: generic, search, and password.-->
+<!--3. Button Input:-->
+<!-- - Specialized input container with a search button.-->
+<!-- - Specialized input container with a submit button.-->
+<!--4. File Input:-->
+<!-- - Drag and drop container for file upload.-->
+<!-- - Input type="file" with an associated file upload button.-->
+<!--Note: The script at the end provides drag-and-drop functionality for the file upload container.-->
+<!--"""-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <link rel="stylesheet" type="text/css" href="../typography.css">
+   <link rel="stylesheet" type="text/css" href="../form.css">
+   <style>
+      form {
+         width: 400px;
+         margin: 20px auto;
+         border-bottom: solid 1px #ccc;
+      }
+      body {
+         width: 100vw;
+      }
+   </style>
+   <title> CSS DEMO - FORM INPUT</title>
+</head>
+<body>
+<!-- Simple form -->
+<div class="container">
+   <form>
+      <label class="label form-label" for="simple-input">BASIC INPUT</label>
+      <input class="input form-input" id="simple-input" type="text" placeholder="Simple Input">
+      <input class="input form-input" id="disabled-input" type="text" placeholder="Disabled Input" disabled>
+      <input class="input form-input error" id="error-input" type="text" placeholder="Error Input">
+      <input class="input form-input success" id="success-input" type="text" placeholder="Error Input"
+             value="Valid Input" disabled>
+      <label class="label form-label" for="simple-input">SVG INPUT</label>
+      <div class="svg-input-container">
+         <div class="input-wrapper">
+            <input class="input form-input svg-input" id="svg-input" type="text" placeholder="SVG Input">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="svg-icon">
+               <path
+                       d="m9.585.52.929.68c.153.112.331.186.518.215l1.138.175a2.678 2.678 0 0 1 2.24 2.24l.174 1.139c.029.187.103.365.215.518l.68.928a2.677 2.677 0 0 1 0 3.17l-.68.928a1.174 1.174 0 0 0-.215.518l-.175 1.138a2.678 2.678 0 0 1-2.241 2.241l-1.138.175a1.17 1.17 0 0 0-.518.215l-.928.68a2.677 2.677 0 0 1-3.17 0l-.928-.68a1.174 1.174 0 0 0-.518-.215L3.83 14.41a2.678 2.678 0 0 1-2.24-2.24l-.175-1.138a1.17 1.17 0 0 0-.215-.518l-.68-.928a2.677 2.677 0 0 1 0-3.17l.68-.928c.112-.153.186-.331.215-.518l.175-1.14a2.678 2.678 0 0 1 2.24-2.24l1.139-.175c.187-.029.365-.103.518-.215l.928-.68a2.677 2.677 0 0 1 3.17 0ZM7.303 1.728l-.927.68a2.67 2.67 0 0 1-1.18.489l-1.137.174a1.179 1.179 0 0 0-.987.987l-.174 1.136a2.677 2.677 0 0 1-.489 1.18l-.68.928a1.18 1.18 0 0 0 0 1.394l.68.927c.256.348.424.753.489 1.18l.174 1.137c.078.509.478.909.987.987l1.136.174a2.67 2.67 0 0 1 1.18.489l.928.68c.414.305.979.305 1.394 0l.927-.68a2.67 2.67 0 0 1 1.18-.489l1.137-.174a1.18 1.18 0 0 0 .987-.987l.174-1.136a2.67 2.67 0 0 1 .489-1.18l.68-.928a1.176 1.176 0 0 0 0-1.394l-.68-.927a2.686 2.686 0 0 1-.489-1.18l-.174-1.137a1.179 1.179 0 0 0-.987-.987l-1.136-.174a2.677 2.677 0 0 1-1.18-.489l-.928-.68a1.176 1.176 0 0 0-1.394 0ZM11.28 6.78l-3.75 3.75a.75.75 0 0 1-1.06 0L4.72 8.78a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L7 8.94l3.22-3.22a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042Z">
+               </path>
+            </svg>
+         </div>
+      </div>
+      <div class="svg-input-container">
+         <div class="input-wrapper">
+            <input class="input form-input svg-input" id="svg-search-input" type="search" placeholder="Search">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="svg-icon">
+               <path
+                       d="M10.68 11.74a6 6 0 0 1-7.922-8.982 6 6 0 0 1 8.982 7.922l3.04 3.04a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215ZM11.5 7a4.499 4.499 0 1 0-8.997 0A4.499 4.499 0 0 0 11.5 7Z">
+               </path>
+            </svg>
+         </div>
+      </div>
+      <div class="svg-input-container">
+         <div class="input-wrapper">
+            <input class="input form-input svg-input" id="svg-pass-input" type="password"
+                   placeholder="Password">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="svg-icon">
+               <path
+                       d="M4 4a4 4 0 0 1 8 0v2h.25c.966 0 1.75.784 1.75 1.75v5.5A1.75 1.75 0 0 1 12.25 15h-8.5A1.75 1.75 0 0 1 2 13.25v-5.5C2 6.784 2.784 6 3.75 6H4Zm8.25 3.5h-8.5a.25.25 0 0 0-.25.25v5.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-5.5a.25.25 0 0 0-.25-.25ZM10.5 6V4a2.5 2.5 0 1 0-5 0v2Z">
+               </path>
+            </svg>
+         </div>
+      </div>
+
+      <div class="svg-input-container">
+         <div class="input-wrapper">
+            <input class="input form-input svg-input" id="svg-email-input" type="email"
+                   placeholder="johndoe@domain.com">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="svg-icon">
+               <path
+                       d="M4.75 2.37a6.501 6.501 0 0 0 6.5 11.26.75.75 0 0 1 .75 1.298A7.999 7.999 0 0 1 .989 4.148 8 8 0 0 1 16 7.75v1.5a2.75 2.75 0 0 1-5.072 1.475 3.999 3.999 0 0 1-6.65-4.19A4 4 0 0 1 12 8v1.25a1.25 1.25 0 0 0 2.5 0V7.867a6.5 6.5 0 0 0-9.75-5.496ZM10.5 8a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0Z">
+               </path>
+            </svg>
+         </div>
+      </div>
+
+      <label class="label form-label" for="simple-input">BUTTON INPUT</label>
+
+      <button class="btn form-btn" type="submit">Submit</button>
+      <hr>
+      <!--      <p class="caption-text"> https://gist.github.com/devinci-it/b464c12ecc7699d41141c4d145816076</p>-->
+
+      <hr>
+
+      <div class="specialized-input-container">
+         <input type="text" placeholder="Search" class="specialized-input input form-input">
+         <button type="submit" class="specialized-input-button btn form-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+               <path
+                       d="M10.68 11.74a6 6 0 0 1-7.922-8.982 6 6 0 0 1 8.982 7.922l3.04 3.04a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215ZM11.5 7a4.499 4.499 0 1 0-8.997 0A4.499 4.499 0 0 0 11.5 7Z">
+               </path>
+            </svg>
+         </button>
+      </div>
+      <hr>
+      <div class="specialized-input-container">
+         <input type="text" placeholder="Submit" class="specialized-input input form-input">
+         <button type="submit" class="specialized-input-button btn form-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+               <path
+                       d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042L9.94 8 6.22 4.28a.75.75 0 0 1 0-1.06Z">
+               </path>
+            </svg>
+         </button>
+      </div>
+      <hr>
+      <label class="label form-label" for="simple-input">FILE INPUT</label>
+
+
+      <div class="specialized-input-container">
+         <!-- Use type="file" for file upload -->
+         <input type="file" class="specialized-input input form-input">
+         <button type="submit" class="specialized-input-button btn form-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+               <path
+                       d="M3 2.25a.75.75 0 0 1 .75-.75h8.5a.75.75 0 0 1 0 1.5h-8.5A.75.75 0 0 1 3 2.25Zm5.53 2.97 3.75 3.75a.749.749 0 1 1-1.06 1.06L8.75 7.561v6.689a.75.75 0 0 1-1.5 0V7.561L4.78 10.03a.749.749 0 1 1-1.06-1.06l3.75-3.75a.749.749 0 0 1 1.06 0Z">
+               </path>
+            </svg>
+         </button>
+      </div>
+      <!-- Specialized Input with Search Button -->
+   </form>
+   <!--    <script src="https://gist.github.com/devinci-it/b464c12ecc7699d41141c4d145816076.js"></script>-->
+</div>
+<div id="drag-drop" class="drag-drop-container">
+   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="48" height="48">
+      <path
+              d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-3.5a.75.75 0 0 1 0-1.5h3.5a.25.25 0 0 0 .25-.25V4.664a.25.25 0 0 0-.073-.177l-2.914-2.914a.25.25 0 0 0-.177-.073H3.75a.25.25 0 0 0-.25.25v6.5a.75.75 0 0 1-1.5 0v-6.5Z"
+              fill="#c4c4c4"></path>
+      <path
+              d="m5.427 15.573 3.146-3.146a.25.25 0 0 0 0-.354L5.427 8.927A.25.25 0 0 0 5 9.104V11.5H.75a.75.75 0 0 0 0 1.5H5v2.396c0 .223.27.335.427.177Z"
+              fill="#c4c4c4"></path>
+   </svg>
+   <p class=" body-medium-text">
+      Drag & Drop Files
+   </p>
+</div>
+<script>
+   var dropzone = document.getElementById('drag-drop');
+
+   dropzone.ondragover = function () {
+      this.className = 'drag-drop-container dragover';
+      return false;
+   };
+
+   dropzone.ondragleave = function () {
+      this.className = 'drag-drop-container';
+      return false;
+   };
+</script>
+</body>
+</html>

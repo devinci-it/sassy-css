@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="../typography.css">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .copy-button {
+            cursor: pointer;
+            background-color: #303030;
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        /* Container styling */
+        .demo-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        /* Typography styles */
+        .typography-card {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .typography-card:hover {
+            transform: scale(1.05);
+        }
+
+        .class-name {
+            font-size: 1em;
+            color: #6a737d;
+        }
+
+        .display-text {
+            font-size: 2em;
+            color: #0366D6;
+        }
+
+        .body-large-text {
+            font-size: 1.5em;
+        }
+
+        .code-block-text {
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+        }
+
+        .title-large-text {
+            font-size: 2.5em;
+        }
+
+        .title-medium-text {
+            font-size: 2em;
+        }
+
+        .title-small-text {
+            font-size: 1.5em;
+        }
+
+        .subtitle-text {
+            font-size: 1.2em;
+            color: #6a737d;
+        }
+
+        .body-medium-text {
+            font-size: 1.2em;
+        }
+
+        .body-small-text {
+            font-size: 1em;
+        }
+
+        .caption-text {
+            font-size: 0.8em;
+            color: #6a737d;
+        }
+
+        .code-inline-text {
+            font-family: 'Courier New', monospace;
+            background-color: #f5f5f5;
+            padding: 2px 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+    </style>
+    <title>Typography Demo</title>
+</head>
+
+<body>
+
+    <!-- Typography Demo -->
+    <div class="">
+        <h1>Typography Demo</h1>
+
+        <!-- Typography Cards -->
+        <div class="typography-card">
+            <p class="class-name">.display-text</p>
+            <div class="display-text">Your sample display text goes here.</div>
+        </div>
+
+        <div class="typography-card">
+            <p class="class-name">.body-large-text</p>
+            <div class="body-large-text">Your sample body large text goes here.</div>
+        </div>
+
+        <div class="typography-card">
+            <p class="class-name">.code-block-text</p>
+            <pre class="code-block-text">Your sample code block text goes here.</pre>
+        </div>
+
+        <div class="typography-card">
+            <p class="class-name">.title-large-text</p>
+            <h1 class="title-large-text">Your sample title large text goes here.</h1>
+        </div>
+
+        <div class="typography-card">
+            <p class="class-name">.title-medium-text</p>
+            <h2 class="title-medium-text">Your sample title medium text goes here.</h2>
+        </div>
+
+        <div class="typography-card">
+            <p class="class-name">.title-small-text</p>
+            <h3 class="title-small-text">Your sample title small text goes here.</h3>
+        </div>
+
+        <div class="typography-card">
+            <p class="class-name">.subtitle-text</p>
+            <h4 class="subtitle-text">Your sample subtitle text goes here.</h4>
+        </div>
+
+        <div class="typography-card">
+            <p class="class-name">.body-medium-text</p>
+            <div class="body-medium-text">Your sample body medium text goes here.</div>
+        </div>
+
+        <div class="typography-card">
+            <p class="class-name">.body-small-text</p>
+            <div class="body-small-text">Your sample body small text goes here.</div>
+        </div>
+
+        <div class="typography-card">
+            <p class="class-name">.caption-text</p>
+            <p class="caption-text">Your sample caption text goes here.</p>
+        </div>
+
+        <div class="typography-card">
+            <p class="class-name">.code-inline-text</p>
+            <code class="code-inline-text">Your sample code inline text goes here.</code>
+        </div>
+
+    </div>
+
+</body>
+
+
+    <script>
+        function copyToClipboard(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+        
+            textarea.select();
+            document.execCommand('copy');
+        
+            document.body.removeChild(textarea);
+        
+            alert(`Copied to clipboard: ${text}`);
+        }
+        
+        function addCopyButtonToCards() {
+            const cards = document.querySelectorAll('.typography-card');
+        
+            cards.forEach(card => {
+                const secondChild = card.children[1]; // Get the second child element
+                const classNameElement = card.querySelector('.class-name');
+        
+                if (secondChild && classNameElement) {
+                    const secondChildClass = secondChild.className;
+                    const className = classNameElement.textContent;
+        
+                    const copyButton = document.createElement('button');
+                    copyButton.className = 'copy-button';
+                    copyButton.textContent = 'Copy Class';
+                    copyButton.onclick = () => copyToClipboard(secondChildClass);
+        
+                    // Append the copy button to the card
+                    card.appendChild(copyButton);
+                }
+            });
+        }
+        
+        // Call the function to add copy buttons
+        addCopyButtonToCards();
+        
+    </script>
+</html>
