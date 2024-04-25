@@ -36,7 +36,8 @@ The `form.css` file provides styles for form elements, making it easy to create 
 ## Demo
 
 The `demo` directory contains HTML files that showcase the usage of different components and styles provided by Sassy CSS. Feel free to explore these demos to understand how to integrate the styles into your projects.
-
+- [Buttons](https://devinci-it.github.io/sassy-css/css/demo/button.html)
+- [Typography](https://devinci-it.github.io/sassy-css/css/demo/typography.html)
 ## Contributing
 
 We welcome contributions! If you find a bug, have a feature request, or want to contribute in any other way, please open an issue or create a pull request.
