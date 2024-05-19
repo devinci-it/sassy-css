@@ -1,0 +1,103 @@
+/**
+ * SCSS mixin for defining borders with customizable sides, width, and color,
+ * along with ready-to-use classes for common border styles.
+ */
+
+// Border variables
+$border-default-width: 1px;
+$border-default-color: #ccc;
+
+// Define customizable border sides
+$border-sides: (
+        top,
+        right,
+        bottom,
+        left,
+        horizontal,
+        vertical,
+        all
+);
+
+// Mixin for setting border style
+@mixin border($side, $width: $border-default-width, $color: $border-default-color) {
+  @if $side == "all" {
+    border: $width solid $color;
+  } @else if $side == "horizontal" {
+    border-top: $width solid $color;
+    border-bottom: $width solid $color;
+  } @else if $side == "vertical" {
+    border-right: $width solid $color;
+    border-left: $width solid $color;
+  } @else {
+    border-#{$side}: $width solid $color;
+  }
+}
+
+// Ready-to-use border classes with shorthand names
+.border-t {
+  @include border(top);
+}
+
+.border-r {
+  @include border(right);
+}
+
+.border-b {
+  @include border(bottom);
+}
+
+.border-l {
+  @include border(left);
+}
+
+.border-h {.bg-sponsors {
+    background-color: #bf3989;
+    color: #ffffff;
+    border-color: #ffffff;
+  }
+  
+  @include border(horizontal);
+}
+
+.border-v {
+  @include border(vertical);
+}
+
+.border-all {
+  @include border(all);
+}
+
+// Customized border classes for different border styles with shorthand names
+.border-primary {
+  @include border(all, 2px, #007bff);
+}
+
+.border-secondary {
+  @include border(all, 1px, #6c757d);
+}
+
+.border-success {
+  @include border(all, 2px, #28a745);
+}
+
+.border-danger {
+  @include border(all, 2px, #dc3545);
+}
+
+.border-warning {
+  @include border(all, 2px, #ffc107);
+}
+
+.border-info {
+  @include border(all, 2px, #17a2b8);
+}
+
+/*
+Sample usage:
+
+<div class="border-all border-primary">Primary Border</div>
+<div class="border-t border-success">Top Border</div>
+<div class="border-r border-danger">Right Border</div>
+<div class="border-b border-warning">Bottom Border</div>
+<div class="border-l border-info">Left Border</div>
+*/

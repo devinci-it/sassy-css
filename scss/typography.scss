@@ -1,0 +1,142 @@
+/**
+ * SCSS mixin for defining font sizes, weights, widths, and colors with customizable variables
+ * and ready-to-use classes tailored for different text elements.
+ */
+
+// Font variables
+$base-font-family: 'Mona Sans', sans-serif;
+$base-font-size: 16px;
+$base-font-weight: 400;
+$base-font-width: 100%;
+
+// Font colors
+$color-dark: #333;
+$color-light: #fff;
+$color-gray: #aaa;
+$color-accent: #ff9900;
+$color-info: #007bff;
+$color-warning: #ffc107;
+$color-success: #28a745;
+$color-error: #dc3545;
+
+// Define customizable font variables
+$txt-sizes: (
+        s: 0.75,
+        m: 1,
+        l: 1.25
+);
+
+$txt-weights: (
+        light: 300,
+        normal: 400,
+        bold: 700
+);
+
+$txt-widths: (
+        condensed: 75%,
+        normal: 100%,
+        expanded: 125%
+);
+
+// Mixin for setting font size based on base font size
+@mixin txt-size($size) {
+  font-size: $base-font-size * map-get($txt-sizes, $size);
+}
+
+// Mixin for setting font weight
+@mixin txt-weight($weight) {
+  font-weight: map-get($txt-weights, $weight);
+}
+
+// Mixin for setting font width
+@mixin txt-width($width) {
+  font-stretch: map-get($txt-widths, $width);
+}
+
+// Mixin for setting text color
+@mixin txt-color($color) {
+  color: $color;
+}
+
+// Ready-to-use font classes with shorthand names
+.txt-s {
+  @include txt-size(s);
+}
+
+.txt-m {
+  @include txt-size(m);
+}
+
+.txt-l {
+  @include txt-size(l);
+}
+
+.txt-b {
+  @include txt-weight(bold);
+}
+
+.txt-light {
+  @include txt-color($color-light);
+}
+
+.txt-dark {
+  @include txt-color($color-dark);
+}
+
+.txt-gray {
+  @include txt-color($color-gray);
+}
+
+.txt-accent {
+  @include txt-color($color-accent);
+}
+
+.txt-info {
+  @include txt-color($color-info);
+}
+
+.txt-warning {
+  @include txt-color($color-warning);
+}
+
+.txt-success {
+  @include txt-color($color-success);
+}
+
+.txt-error {
+  @include txt-color($color-error);
+}
+
+// Customized font classes for different text elements with shorthand names
+.txt-title {
+  @include txt-size(l);
+  @include txt-weight(bold);
+  @include txt-dark;
+}
+
+.txt-subtitle {
+  @include txt-size(m);
+  @include txt-weight(normal);
+  @include txt-gray;
+}
+
+.txt-body {
+  @include txt-size(m);
+  @include txt-weight(normal);
+  @include txt-dark;
+}
+
+.txt-display {
+  @include txt-size(l);
+  @include txt-weight(bold);
+  @include txt-width(expanded);
+  @include txt-accent;
+}
+
+/*
+Sample usage:
+
+<h1 class="txt-title">Title Text</h1>
+<p class="txt-body">Body Text</p>
+<div class="txt-display">Display Text</div>
+*/
